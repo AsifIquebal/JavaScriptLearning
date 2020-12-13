@@ -22,7 +22,6 @@ describe("Functions in Java Scripts", () => {
         function add() {
             console.log(2 + 3)
         }
-
     })
 
     it('Different ways', () => {
@@ -61,11 +60,59 @@ describe("Functions in Java Scripts", () => {
         })();
     })
 
-    it('Self Invoking Functions', () => {
-        (function test() {
-            console.log('Hello World...')
-        })();
+    it('Type of Function is function', () => {
+        function add() {
+            console.log(arguments.length);
+        }
+        add();
+        // The typeof operator in JavaScript returns "function" for functions.
+        // But, JavaScript functions can best be described as objects.
+        console.log(typeof (add));
     })
+
+
+    it('Missing Arguments', () => {
+        // If a function is called with missing arguments (less than declared)
+        // the missing values are set to undefined
+        function myFunction(x, y) {
+            if (y === undefined) {
+                y = 2;
+            }
+            console.log("Param1: " + x + "\nParam2: " + y);
+        }
+        myFunction(6, 4);
+        myFunction(6);
+    })
+
+    it('Default Parameters ES6 onwards', () => {
+        function xyz(x, y = 2) {
+            console.log("Param1: " + x + "\nParam2: " + y);
+        };
+        xyz(6, 4);
+        xyz(6);
+    })
+
+    it.only('Argument Object', () => {
+        x = findMax(1, 123, 500, 115, 44, 88);
+        function findMax() {
+            var i;
+            var max = -Infinity;
+            for (i = 0; i < arguments.length; i++) {
+                if (arguments[i] > max) {
+                    max = arguments[i];
+                }
+            }
+            console.log(typeof (arguments));
+            console.log(max);
+        }
+    })
+
+
+
+
+
+
+
 
     it('demo 1', () => {
         function myDisplayer(some) {

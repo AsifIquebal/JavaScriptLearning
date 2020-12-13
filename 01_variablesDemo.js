@@ -26,16 +26,24 @@ describe('Variables Demo', () => {
             age: 26
         };
         // dot
-        console.log(person.name)
-        // bracket, it allows dynamic programming
+        console.log(person.name) // bracket, it allows dynamic programming
         let selection = 'name'
         person[selection] = 'Aayan'
         console.log(person.name)
     })
 
+    it('Dynamic Propety Names', () => {
+        const dynamic = 'flavour';
+        var item = {
+            name: 'Coke',
+            [dynamic]: 'Cherry'
+        }
+        console.log(item); // { name: "Coke", flavour: "Cherry" }
+    });
+
     it('Let and Var, ES6 says to use use let', () => {
 
-    })
+    });
 
 
 })

@@ -1,14 +1,3 @@
-const panNumber = "ABCD123"
-console.log(panNumber)
-
-let name = "asif"
-name = "sarkar"
-console.log(name)
-
-var name1 = "asif"
-name1 = "sarkar"
-console.log(name1)
-console.log("=======================================================")
 function counter() {
     //let i = 100
     console.log(i)
@@ -21,9 +10,17 @@ function counter() {
 counter()
 
 
-describe('Let vs Var after ES6', () => {
+describe('Variables Demo', () => {
 
-    it.only('dot and bracket notation', () => {
+    it.only('interpolation', () => {
+        console.log("hey welcome")
+        let n1 = 'Asif'
+        console.log("My name is: `${n1}`" + n1)
+        // backtciks, varibale interpolation
+        console.log(`my name is: ${n1}`)
+    })
+
+    it('dot and bracket notation', () => {
         let person = {
             name: 'Reshma',
             age: 26
@@ -36,7 +33,9 @@ describe('Let vs Var after ES6', () => {
         console.log(person.name)
     })
 
+    it('Let and Var, ES6 says to use use let', () => {
 
+    })
 
 
 })

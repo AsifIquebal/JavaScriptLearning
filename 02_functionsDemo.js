@@ -14,6 +14,40 @@ describe("Functions in Java Scripts", () => {
         x('Aayan');
     });
 
+    it('Function Expression: Treating function as value', () => {
+        function sayHello() {
+            return "Hello, ";
+        }
+        function greeting(helloMessage, name) {
+            console.log(helloMessage() + name);
+        }
+        // Pass `sayHello` as an argument to `greeting` function
+        greeting(sayHello, "JavaScript!");
+        // We are passing our sayHello() function as an argument to the greeting() function, 
+        // this explains how we are treating the function as a value.
+        // The function that we pass as an argument to another function, is called a Callback function.
+        // sayHello is a Callback function.
+    });
+
+    it('Higher Order Function: Using variable', () => {
+        const sayHello = function () {
+            return function () {
+                console.log("Hello!");
+            }
+        }
+        const myFunc = sayHello();
+        myFunc();
+    });
+
+    it.only('Higher Order Function: Using double parentheses', () => {
+        const sayHello = function () {
+            return function () {
+                console.log("Hello!");
+            }
+        }
+        sayHello()();
+    });
+
     it('Hoisting', () => {
         // Hoisting is JavaScript's default behavior of moving declarations to the top of the current scope.
         // Hoisting applies to variable declarations and to function declarations.
@@ -92,7 +126,7 @@ describe("Functions in Java Scripts", () => {
         xyz(6);
     })
 
-    it.only('Argument Object', () => {
+    it('Argument Object', () => {
         x = findMax(1, 123, 500, 115, 44, 88);
         function findMax() {
             var i;
@@ -106,13 +140,6 @@ describe("Functions in Java Scripts", () => {
             console.log(max);
         }
     })
-
-
-
-
-
-
-
 
     it('demo 1', () => {
         function myDisplayer(some) {

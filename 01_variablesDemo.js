@@ -7,16 +7,16 @@ function counter() {
     console.log(i)
 }
 
-counter()
+//counter()
 
 
 describe('Variables Demo', () => {
 
-    it.only('interpolation', () => {
+    it('interpolation', () => {
         console.log("hey welcome")
         let n1 = 'Asif'
         console.log("My name is: `${n1}`" + n1)
-        // backtciks, varibale interpolation
+        // backticks, varibale interpolation
         console.log(`my name is: ${n1}`)
     })
 
@@ -26,7 +26,8 @@ describe('Variables Demo', () => {
             age: 26
         };
         // dot
-        console.log(person.name) // bracket, it allows dynamic programming
+        console.log(person.name)
+        // bracket, it allows dynamic programming
         let selection = 'name'
         person[selection] = 'Aayan'
         console.log(person.name)
@@ -42,8 +43,30 @@ describe('Variables Demo', () => {
     });
 
     it('Let and Var, ES6 says to use use let', () => {
+        function mno() {
+            for (var i = 0; i < 5; i++) {
+                console.log(i);
+            }
+            console.log(i);
+        }
+        function abc() {
+            for (let i = 0; i < 5; i++) {
+                console.log(i);
+            }
+            console.log(i);
+        }
 
+        console.log(mno());
+        console.log(abc());
     });
 
+    it.only('', () => {
+        let x = 'a name';
+        console.log(typeof x);
+        x = 300;
+        console.log(typeof x);
+        x = true;
+        console.log(typeof x);
+    });
 
 })

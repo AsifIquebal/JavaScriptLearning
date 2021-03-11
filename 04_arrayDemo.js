@@ -1,6 +1,6 @@
 describe('Array Concepts', () => {
 
-    it('', () => {
+    it('Shift, Unshift, Pop', () => {
         numbers = ['One', 'Two', 'Three', 'Four', 'Five', 'Six']
         numbers[0] = '1'
         console.log(numbers)
@@ -11,11 +11,16 @@ describe('Array Concepts', () => {
         console.log("After Shift: " + numbers)
         numbers.unshift('hello')
         console.log("After unshift: " + numbers)
-
         numbers = ['One', 'Two', 'Three', 'Four', 'Five', 'Six']
         console.log(numbers)
         numbers.pop()
         console.log("After Pop: " + numbers)
+    });
+
+    it.only('Array to Oject : Spread ... operator', () => {
+        var fruits = ["Appale", "Banana", "Oranges"]
+        var fruitsObject = { ...fruits };
+        console.log(fruitsObject);
     });
 
     it('Extract Unique Values', () => {
@@ -31,7 +36,7 @@ describe('Array Concepts', () => {
         // [1, 2, 5, 6, 7, 9]
     });
 
-    it.only('Resize an Array', () => {
+    it('Resize an Array', () => {
         var entries = [1, 2, 3, 4, 5, 6, 7];
         console.log(entries.length); // 7  
         entries.length = 4;
@@ -71,8 +76,5 @@ describe('Array Concepts', () => {
         var r = [2, 4, 6, 8].every((e) => (e % 2 == 0));
         console.log(r)
     });
-
-
-
 
 })
